@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_hexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stde-la- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stde-la- <stde-la-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 11:57:17 by stde-la-          #+#    #+#             */
-/*   Updated: 2022/11/15 11:57:19 by stde-la-         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:32:44 by stde-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/utils.h"
-#include "../include/ft_printf.h"
+#include "../ft_printf.h"
 
 static int	hexa_len(unsigned long n)
 {
@@ -42,9 +41,9 @@ char	*ft_itohexa(unsigned long n, int is_lower_case)
 	while (n)
 	{
 		if (is_lower_case)
-			hexa[i] = HEXA_BASE_LOWER[absolute(n % 16)];
+			hexa[i] = HEXA_BASE_LOWER[ft_abs(n % 16)];
 		else
-			hexa[i] = HEXA_BASE_UPPER[absolute(n % 16)];
+			hexa[i] = HEXA_BASE_UPPER[ft_abs(n % 16)];
 		n /= 16;
 		i--;
 	}

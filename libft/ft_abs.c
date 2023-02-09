@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stde-la- <stde-la-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 11:03:51 by stde-la-          #+#    #+#             */
-/*   Updated: 2023/02/07 13:05:07 by stde-la-         ###   ########.fr       */
+/*   Created: 2023/02/07 12:24:28 by stde-la-          #+#    #+#             */
+/*   Updated: 2023/02/07 12:26:18 by stde-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+unsigned int	ft_abs(int n)
 {
-	int	i;
-
-	i = 0;
-	while (s && s[i])
-		i++;
-	return (i);
+	if (n < 0)
+		return ((unsigned int)-n);
+	return ((unsigned int)n);
 }

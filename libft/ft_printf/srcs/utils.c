@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stde-la- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stde-la- <stde-la-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 10:47:49 by stde-la-          #+#    #+#             */
-/*   Updated: 2022/11/15 10:47:50 by stde-la-         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:13:45 by stde-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/utils.h"
-#include "../include/ft_printf.h"
-
-unsigned int	absolute(int n)
-{
-	if (n < 0)
-		return ((unsigned int)-n);
-	return ((unsigned int)n);
-}
+#include "../ft_printf.h"
 
 int	ft_putstr(char *s)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_key.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stde-la- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stde-la- <stde-la-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:45:50 by stde-la-          #+#    #+#             */
-/*   Updated: 2023/02/03 16:45:52 by stde-la-         ###   ########.fr       */
+/*   Updated: 2023/02/09 12:56:20 by stde-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	handle_key(int key, t_data *data)
 {
+	// printf("%d\n", key);
 	if (key == ESC)
 		close_program(data);
 	else if (key == UP || key == DOWN || key == LEFT || key == RIGHT)
@@ -27,9 +28,9 @@ int	handle_key(int key, t_data *data)
 	else if (key == RESET)
 		init_camera(data);
 	else if (key == PERSPECTIVE_TOGGLE)
-		data->camera.iso_projection = data->camera.iso_projection == 0;
+		data->camera.iso_projection = !data->camera.iso_projection;
+	else if (key == HIDE_CONTROLS)
+		data->show_controls = !data->show_controls;
 	display_map(data);
-	mlx_put_image_to_window(data->mlx, data->win, data->img.p, 0, 0);
-	draw_menu(data);
 	return (0);
 }

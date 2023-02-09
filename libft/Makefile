@@ -7,7 +7,8 @@ SRCS = 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_putnbr_fd.c \
 		ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c\
 		get_next_line.c get_next_line_utils.c \
 		ft_strcpy.c			ft_index_of.c \
-		ft_str_toupper.c	
+		ft_str_toupper.c	ft_abs.c \
+		
 
 OBJECTS = ${SRCS:.c=.o}
 

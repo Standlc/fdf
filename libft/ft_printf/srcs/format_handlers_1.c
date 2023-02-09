@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   format_handlers_1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stde-la- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stde-la- <stde-la-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 11:04:29 by stde-la-          #+#    #+#             */
-/*   Updated: 2022/11/15 11:04:32 by stde-la-         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:38:09 by stde-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/format_handlers.h"
-#include "../include/utils.h"
-#include "../include/ft_printf.h"
+#include "../ft_printf.h"
 
 int	handle_c(va_list pargs, char *p, int length)
 {
@@ -30,6 +28,8 @@ int	handle_s(va_list pargs, char *p, int length)
 		write(1, "(null)", 6);
 		return (6);
 	}
+	printf("%s\n", p);
+	return (0);
 	length = ft_putstr(p);
 	return (length);
 }

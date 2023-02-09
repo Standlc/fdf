@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stde-la- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stde-la- <stde-la-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 21:19:32 by stde-la-          #+#    #+#             */
-/*   Updated: 2023/01/30 21:19:33 by stde-la-         ###   ########.fr       */
+/*   Updated: 2023/02/09 12:57:57 by stde-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-# define WIDTH				1400
-# define HEIGHT				800
+# define WIDTH				1440
+# define HEIGHT				850
 # define RAD_ANGLE			0.46365
 # define HEXA_BASE			"0123456789ABCDEF"
 # define LOADING_SYMBOLS	"\\|/-"
@@ -27,16 +27,11 @@
 # include <libft.h>
 
 enum {
-	ON_KEYDOWN = 2,
-	ON_KEYUP = 3,
-	ON_MOUSEDOWN = 4,
-	ON_MOUSEUP = 5,
-	ON_MOUSEMOVE = 6,
-	ON_EXPOSE = 12,
 	ON_DESTROY = 17,
 };
 
 enum {
+	//LINUX KEYS
 	// ROTATE_Z_LEFT = 49,
 	// ROTATE_Z_RIGHT = 50,
 	// ROTATE_X_LEFT = 51,
@@ -55,8 +50,10 @@ enum {
 	// DECREASE_ALTITUDE = 115,
 	// RESET = 114,
 	// ESC = 65307,
-	// PERSPECTIVE_TOGGLE = 112
+	// PERSPECTIVE_TOGGLE = 112,
+	// HIDE_CONTROLS = 10
 
+	//MACOS KEYS
 	ROTATE_Z_LEFT = 18,
     ROTATE_Z_RIGHT = 19,
     ROTATE_X_LEFT = 20,
@@ -75,17 +72,8 @@ enum {
     DECREASE_ALTITUDE = 1,
     RESET = 15,
     ESC = 53,
-    PERSPECTIVE_TOGGLE = 112
-};
-
-enum {
-	ZOOM = 1,
-	TRANSLATION = 2,
-	ROTATE_X = 4,
-	ROTATE_Y = 5,
-	ROTATE_Z = 6,
-	ROTATION = 7,
-	ALTITUDE = 8
+    PERSPECTIVE_TOGGLE = 35,
+	HIDE_CONTROLS = 49
 };
 
 typedef struct	s_rgb {
@@ -141,6 +129,7 @@ typedef struct	s_data {
 	int			map_height;
 	int			map_width;
 	t_camera	camera;
+	int			show_controls;
 }				t_data;
 
 void	init_camera(t_data *data);
@@ -150,7 +139,7 @@ int		handle_key(int key, t_data *data);
 void	draw_line(t_data *data, t_point *a, t_point *b);
 double	abs_double(double nb);
 
-void	draw_menu(t_data *data);
+void	draw_controls(t_data *data);
 
 int		pixel_color(t_point *curr, t_point *a, t_point *b);
 

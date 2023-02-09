@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stde-la- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stde-la- <stde-la-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:47:34 by stde-la-          #+#    #+#             */
-/*   Updated: 2022/11/08 15:50:53 by stde-la-         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:27:48 by stde-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,13 @@ int	len(int n)
 	return (i);
 }
 
-static unsigned int	get_absolute(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
-}
-
 char	*ft_itoa(int n)
 {
 	char			*ascii;
 	int				i;
 	unsigned int	unsigned_n;
 
-	unsigned_n = get_absolute(n);
+	unsigned_n = ft_abs(n);
 	ascii = malloc(len(n) + 1);
 	if (!ascii)
 		return (0);

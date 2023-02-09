@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stde-la- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stde-la- <stde-la-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 21:05:01 by stde-la-          #+#    #+#             */
-/*   Updated: 2023/01/30 21:05:02 by stde-la-         ###   ########.fr       */
+/*   Updated: 2023/02/09 12:57:51 by stde-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,6 @@ void	display_map(t_data *data)
 				draw_line(data, &(line.start), &(line.end));
 		}
 	}
+	mlx_put_image_to_window(data->mlx, data->win, data->img.p, 0, 0);
+	draw_controls(data);
 }

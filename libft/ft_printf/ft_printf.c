@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stde-la- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stde-la- <stde-la-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 10:23:09 by stde-la-          #+#    #+#             */
-/*   Updated: 2022/11/14 13:27:22 by stde-la-         ###   ########.fr       */
+/*   Updated: 2023/02/07 14:02:34 by stde-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/ft_printf.h"
+#include <stdio.h>
+#include "ft_printf.h"
 
 static void	initialize_function_arr(int (*arr[9])(va_list, char *, int))
 {
@@ -66,17 +67,19 @@ int	ft_printf(const char *str, ...)
 	return (total_printed_length);
 }
 
-// #include <limits.h>
+// cc ft_printf.c srcs/*.c
+// ../ft_abs.c ../ft_index_of.c ../ft_itoa.c ../ft_strlen.c
+
 // int main()
 // {
 // 	char	str[] = "Hello world";
 // 	char	*p = str;
 
-// 	printf("\n%d\n", ft_printf(",%c %s %i %u %% 
-// 		%i %d %x %X %% %p .%s. %s %%%% %p %p %d %s\t %c %x %u %d %d",
-// 		str[0], str, 504, -400000000, 16, 42, -6,
-// 		2123, p, "", " - ", NULL, -2, 0, NULL, 150, INT_MIN, INT_MIN, 
-// 		INT_MIN, LONG_MAX));
+// 	// ft_printf(",%c %s %i %u %% 
+// 	// 	%i %d %x %X %% %p .%s. %s %%%% %p %p %d %s\t %c %x %u %d %d",
+// 	// 	str[0], str, 504, -400000000, 16, 42, -6,
+// 	// 	2123, p, "", " - ", NULL, -2, 0, NULL, 150, INT_MIN, INT_MIN, 
+// 	// 	INT_MIN, LONG_MAX);
 
 // 	// printf("\n%d\n",    printf(",%c %s %i %u %% 
 // 	// 	%i %d %x %X %% %p .%s. %s %%%% %p %p %d %s\t %c %x %u %d %d",

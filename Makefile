@@ -5,25 +5,28 @@ SRCS		=	main.c								sources/draw/draw_line.c \
 				sources/camera_settings.c			sources/draw/display_map.c \
 				sources/close_program.c				sources/projection_methods.c \
 				sources/draw/gradient.c				sources/get_map/get_map_utils.c \
-				sources/get_map/check_map_file.c	sources/draw/draw_menu.c \
+				sources/get_map/check_map_file.c	sources/draw/draw_controls.c \
 				sources/handle_key.c
 
 OBJS		=	$(SRCS:.c=.o)
-
-INCLUDES	=	-Iminilibx_macos -Ilibft
 
 LIB			=	libft.a
 
 LIBFT		=	libft
 
-MINILIBX	=	minilibx_macos
-
 CC			=	cc
 
 CFLAGS		=	-Wall -Wextra -Werror
 
+#LINUX
+#INCLUDES	=	-Iminilibx-linux -Ilibft
+#MINILIBX	=	minilibx-linux
+#XFLAGS		=	-lmlx -lXext -lX11
+
+#MACOS
+INCLUDES	=	-Iminilibx_macos -Ilibft
+MINILIBX	=	minilibx_macos
 XFLAGS		=	-lmlx -framework OpenGL -framework AppKit
-#-lmlx -lXext -lX11
 
 MATH_LIB	=	-lm
 

@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   format_handlers_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stde-la- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stde-la- <stde-la-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 11:07:38 by stde-la-          #+#    #+#             */
-/*   Updated: 2022/11/15 11:07:39 by stde-la-         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:32:44 by stde-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/format_handlers.h"
-#include "../include/utils.h"
-#include "../include/ft_printf.h"
+#include "../ft_printf.h"
 
 int	handle_u(va_list pargs, char *p, int length)
 {

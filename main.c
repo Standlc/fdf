@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stde-la- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stde-la- <stde-la-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:29:25 by stde-la-          #+#    #+#             */
-/*   Updated: 2023/01/25 17:29:26 by stde-la-         ###   ########.fr       */
+/*   Updated: 2023/02/09 12:56:24 by stde-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	init_data(t_data *data)
 {
 	data->map_height = 0;
 	data->map_width = 0;
+	data->show_controls = 1;
 	init_camera(data);
 }
 
@@ -49,8 +50,6 @@ int	main(int argc, char **argv)
 	data.img.img_addr = mlx_get_data_addr(data.img.p, &data.img.bpp,
 			&data.img.line_length, &data.img.endian);
 	display_map(&data);
-	mlx_put_image_to_window(data.mlx, data.win, data.img.p, 0, 0);
-	draw_menu(&data);
 	mlx_hook(data.win, 2, 1L << 0, handle_key, &data);
 	mlx_hook(data.win, ON_DESTROY, ON_DESTROY, close_program, &data);
 	mlx_loop(data.mlx);
